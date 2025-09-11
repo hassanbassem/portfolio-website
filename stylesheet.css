@@ -127,7 +127,7 @@ h2 {
 .card {
     display: flex;
     flex-direction: column;
-    background-color: #111;
+    background-color: #1111118f;
     box-shadow: 1px 1px 4px -1px var(--brand-color);
     color: white;
     padding: 2em;
@@ -230,4 +230,46 @@ h2 {
 
 .icon p {
     text-align: left;
+}
+
+.process {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    width: 80%;
+    margin: auto;
+    counter-reset: number;
+    align-items: flex-start;
+}
+
+.phase {
+    background-color: var(--brand-color);
+    color: black;
+    display: flex;
+    border-radius: 6px;
+    width: 90%;
+}
+
+.phase div {
+    padding: 1em 2em 1em 0;
+}
+
+.phase::before {
+    counter-increment: number;
+    content: counter(number);
+    flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+.process .phase:nth-child(even) {
+    direction: rtl;
+    align-self: flex-end;
+}
+
+.process .phase:nth-child(even) div {
+    padding: 1em 0 1em 2em;
 }
