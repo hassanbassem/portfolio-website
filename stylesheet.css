@@ -394,3 +394,111 @@ form div:last-child {
 .about-container button {
     margin: 2em;
 }
+
+/* The device with borders */
+.smartphone {
+  position: absolute;
+  width: calc(360px/1.5);
+  height: calc(640px/1.5);
+  margin: auto;
+  border: 12px black solid;
+  border-top-width: 45px;
+  border-bottom-width: 45px;
+  border-radius: 27px;
+  top: 30%;
+  left: 78%;
+  z-index: 10;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 45px;
+  height: 3.75px;
+  position: absolute;
+  top: -22.5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 7.5px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 26.25px;
+  height: 26.25px;
+  position: absolute;
+  left: 50%;
+  bottom: -48.75px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 218px;
+  height: 337px;
+  background: white;
+  overflow: hidden;
+}
+
+
+/* The laptop with borders */
+.laptop {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  top: 50%;
+  left: 68%;
+  position: absolute;
+  width: calc(1366px/2);
+  height: calc(800px/2);
+  border-radius: 6px;
+  border-style: solid;
+  border-color: black;
+  border-width: 12px 12px 40px;
+  background-color: black;
+
+}
+
+/* The keyboard of the laptop */
+.laptop:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: calc(1600px/2);
+  height: calc(60px/2);
+  margin: 12.5px 0 0 -65px;
+  background: black;
+  border-radius: 6px;
+}
+
+/* The top of the keyboard */
+.laptop:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: calc(250px/2);
+  height: calc(30px/2);
+  bottom: -55px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: #f1f1f1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.laptop .content {
+  width: calc(1320px/2);
+  height: calc(750px/2);
+  overflow: hidden;
+  border: none;
+}
