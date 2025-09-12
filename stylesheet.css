@@ -299,3 +299,80 @@ h2 {
 .process-2 div:last-child {
     border: hidden;
 }
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-container > div {
+    flex-basis: 40%;
+}
+
+.form-container {
+    flex-basis: 40%;
+}
+
+form {
+    border-radius: 6px;
+    background-color: var(--brand-color);
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    height: 25em;
+    color: black;
+}
+
+label {
+    display: block;
+}
+
+form div {
+    width: 100%;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.7em;
+    border-radius: 6px;
+    border: 0;
+    flex-grow: 1;
+    background-color: #2f2f2f;
+    color: var(--brand-color);
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+}
+
+form div {
+    flex-shrink: 1;
+}
+
+form div:last-child {
+    flex-basis: 50%;
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+.form-container button {
+    margin: 1em;
+}
+
+.contact-icons {
+    width: 40%;
+    height: 2em;
+}
+
+.contact-icons img {
+    min-width: 20%;
+    margin: 0.5em;
+    height: 100%;
+    object-fit: contain;
+}
