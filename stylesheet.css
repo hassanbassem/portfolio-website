@@ -376,3 +376,21 @@ form div:last-child {
     height: 100%;
     object-fit: contain;
 }
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-container > div {
+    flex-basis: 40%;
+}
+
+.about-container img {
+    border-radius: 6px;
+}
+
+.about-container button {
+    margin: 2em;
+}
