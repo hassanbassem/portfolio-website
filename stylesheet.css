@@ -273,3 +273,29 @@ h2 {
 .process .phase:nth-child(even) div {
     padding: 1em 0 1em 2em;
 }
+
+.process-2 {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    counter-reset: number2; 
+}
+
+.phase-2 {
+    border-bottom: 1px solid var(--brand-color);
+    padding: 2em 0;
+}
+
+.phase-2 h3 {
+    color: var(--brand-color);
+}
+
+.phase-2 h3::before {
+    counter-increment: number2;
+    content: ""counter(number2)". ";
+}
+
+.process-2 div:last-child {
+    border: hidden;
+}
