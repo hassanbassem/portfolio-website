@@ -15,7 +15,6 @@ body {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     max-width: 100vw;
-    overflow-x: hidden;
 }
 
 p {
@@ -28,7 +27,6 @@ ul {
 }
 
 header {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -43,6 +41,10 @@ nav {
     position: fixed;
     z-index: 100;
     width: 100%;
+}
+
+nav img {
+    display: none;
 }
 
 nav ul {
@@ -62,13 +64,14 @@ nav strong {
 }
 
 header main {
-    flex-grow: 1;
     display: flex;
     justify-content: space-between;
     padding: 10em;
     padding-bottom: 3em;
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
 }
 
 header h1 {
@@ -81,8 +84,18 @@ header p {
     font-size: 1.5em;
 }
 
-header main div {
-    flex-basis: 40%;
+.header-content {
+    /* border: 1px solid red; */
+    width: 50%;
+}
+
+.devices {
+    /* border: 1px solid blue; */
+    width: 40%;
+}
+
+.devices {
+    position: relative;
 }
 
 .circle {
@@ -108,7 +121,17 @@ button {
 }
 
 section {
-    padding: 2em 4em;
+    margin: 5em auto;
+    width: 90%;
+    /* padding: 2em 4em; */
+}
+
+#About {
+    margin-top: 2em;
+}
+
+#contact {
+    margin-bottom: 2em;
 }
 
 h2 {
@@ -119,7 +142,9 @@ h2 {
     display: grid;
     margin: auto;
     max-width: 70em;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
+    justify-content: center;
     gap: 2em;
     row-gap: 4em;
 }
@@ -178,6 +203,7 @@ h2 {
 
 .prototype {
     flex-basis: 30%;
+    min-width: 20em;
     border-radius: 6px;
     background-color: #111;
     border: 1px solid var(--brand-color);
@@ -211,10 +237,8 @@ h2 {
 }
 
 .icon img {
-    flex-basis: 10%;
-    flex-grow: 0;
     margin-bottom: 1em;
-    max-width: 10%;
+    width: 10%;
     object-fit: cover;
 }
 
@@ -296,8 +320,13 @@ h2 {
     content: ""counter(number2)". ";
 }
 
+.process-2 div:first-child {
+    padding-top: 0;
+}
+
 .process-2 div:last-child {
     border: hidden;
+    padding-bottom: 0;
 }
 
 .contact-container {
@@ -381,14 +410,17 @@ form div:last-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.about-container > div {
+.about-container div {
     flex-basis: 40%;
 }
 
 .about-container img {
     border-radius: 6px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-container button {
@@ -398,15 +430,15 @@ form div:last-child {
 /* The device with borders */
 .smartphone {
   position: absolute;
-  width: calc(360px/1.5);
-  height: calc(640px/1.5);
+  width: calc(22.5em / 1.5);       /* 360px → 22.5em */
+  height: calc(40em / 1.5);        /* 640px → 40em */
   margin: auto;
-  border: 12px black solid;
-  border-top-width: 45px;
-  border-bottom-width: 45px;
-  border-radius: 27px;
-  top: 30%;
-  left: 78%;
+  border: 0.75em solid black;      /* 12px → 0.75em */
+  border-top-width: 2.8125em;      /* 45px → 2.8125em */
+  border-bottom-width: 2.8125em;
+  border-radius: 1.6875em;         /* 27px → 1.6875em */
+  top: 10%;
+  left: 65%;
   z-index: 10;
 }
 
@@ -414,25 +446,25 @@ form div:last-child {
 .smartphone:before {
   content: '';
   display: block;
-  width: 45px;
-  height: 3.75px;
+  width: 2.8125em;                 /* 45px → 2.8125em */
+  height: 0.234em;                 /* 3.75px → 0.234em */
   position: absolute;
-  top: -22.5px;
+  top: -1.40625em;                 /* 22.5px → 1.40625em */
   left: 50%;
   transform: translate(-50%, -50%);
   background: #333;
-  border-radius: 7.5px;
+  border-radius: 0.46875em;        /* 7.5px → 0.46875em */
 }
 
 /* The circle on the bottom of the device */
 .smartphone:after {
   content: '';
   display: block;
-  width: 26.25px;
-  height: 26.25px;
+  width: 1.64em;                   /* 26.25px → 1.64em */
+  height: 1.64em;
   position: absolute;
   left: 50%;
-  bottom: -48.75px;
+  bottom: -3.05em;                 /* 48.75px → 3.05em */
   transform: translate(-50%, -50%);
   background: #333;
   border-radius: 50%;
@@ -440,30 +472,27 @@ form div:last-child {
 
 /* The screen (or content) of the device */
 .smartphone .content {
-  width: 218px;
-  height: 337px;
+  width: 13.625em;                 /* 218px → 13.625em */
+  height: 21.0625em;               /* 337px → 21.0625em */
   background: white;
   overflow: hidden;
 }
 
-
-/* The laptop with borders */
 .laptop {
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-  -webkit-transform: scale(.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
-  transform: scale(.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
-  top: 50%;
-  left: 68%;
+  -webkit-transform: scale(.6) translate(-50%);
+  transform: scale(.6) translate(-50%);
+  top: 40%;
+  left: 40%;
   position: absolute;
-  width: calc(1366px/2);
-  height: calc(800px/2);
-  border-radius: 6px;
+  width: calc(85.375em / 2);       /* 1366px → 85.375em */
+  height: calc(50em / 2);          /* 800px → 50em */
+  border-radius: 0.375em;          /* 6px → 0.375em */
   border-style: solid;
   border-color: black;
-  border-width: 12px 12px 40px;
+  border-width: 0.75em 0.75em 2.5em; /* 12px, 40px */
   background-color: black;
-
 }
 
 /* The keyboard of the laptop */
@@ -471,11 +500,11 @@ form div:last-child {
   content: '';
   display: block;
   position: absolute;
-  width: calc(1600px/2);
-  height: calc(60px/2);
-  margin: 12.5px 0 0 -65px;
+  width: calc(100em / 2);          /* 1600px → 100em */
+  height: calc(3.75em / 2);        /* 60px → 3.75em */
+  margin: 0.78em 0 0 -4.06em;      /* 12.5px, -65px */
   background: black;
-  border-radius: 6px;
+  border-radius: 0.375em;          /* 6px → 0.375em */
 }
 
 /* The top of the keyboard */
@@ -483,22 +512,103 @@ form div:last-child {
   content: '';
   display: block;
   position: absolute;
-  width: calc(250px/2);
-  height: calc(30px/2);
-  bottom: -55px;
+  width: calc(15.625em / 2);       /* 250px → 15.625em */
+  height: calc(1.875em / 2);       /* 30px → 1.875em */
+  bottom: -3.4375em;               /* 55px → 3.4375em */
   left: 50%;
   -webkit-transform: translate(-50%);
   transform: translate(-50%);
   background: #f1f1f1;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 0.3125em;  /* 5px → 0.3125em */
+  border-bottom-right-radius: 0.3125em;
   z-index: 1;
 }
 
 /* The screen (or content) of the device */
 .laptop .content {
-  width: calc(1320px/2);
-  height: calc(750px/2);
+  width: calc(82.5em / 2);         /* 1320px → 82.5em */
+  height: calc(46.875em / 2);      /* 750px → 46.875em */
   overflow: hidden;
   border: none;
+}
+
+@media (max-width: 1200px) {
+
+    .devices {
+        display: none;
+    }
+
+    header button {
+        width: 100%;
+    }
+
+    header main {
+        padding-right: 5em;
+        padding-left: 5em;
+        align-items: flex-end;
+    }
+
+    header main div {
+        flex-grow: 1;
+    }
+
+    .about-container {
+        flex-direction: column-reverse;
+    }
+
+    .about-container img {
+        width: 100%;
+        margin-bottom: 0.5em;
+    }
+}
+
+@media (max-width: 960px) {
+
+    .hidden {
+        display: none;
+    }   
+
+    strong {
+        padding: 2em 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav img {
+        display: initial;
+    }
+
+    nav ul {
+        margin: 0;
+        min-width: 100%;
+        flex-direction: column;
+        gap: initial;
+    }
+
+    nav li {
+        padding: 2em 0;
+    }
+
+    .icons {
+        max-width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    }
+
+    .icon {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .icon img {
+        width: 30%;
+    }
+}
+
+@media (max-width: 390px) {
+    
+    :root {
+        font-size: 0.9em;
+    }
 }
