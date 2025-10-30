@@ -11,5 +11,5 @@ burgerMenuIcon.onclick = () => {
     navMenu.classList.toggle("hidden");
 };
 
-if (currentPage == "index")
+if (currentPage == "index" || currentPage == "")
     homeNavigatorOnLi.href = "#header";
