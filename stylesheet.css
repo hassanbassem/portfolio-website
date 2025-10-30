@@ -6,6 +6,7 @@
 
 :root {
     --brand-color : #ECC93A;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -19,6 +20,11 @@ body {
 
 p {
     line-height: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
 }
 
 ul {
@@ -113,11 +119,13 @@ button {
     padding: 1em 2em;
     background-color: var(--brand-color);
     font-weight: 700;
+    cursor: pointer;
 }
 
 #get-consultation {
     display: block;
     margin: 2em auto;
+    width: fit-content;
 }
 
 section {
