@@ -3,6 +3,8 @@ const navMenu = document.querySelector("nav ul");
 const homeNavigatorOnLi = document.getElementById("homeNavigator");
 const currentPage = window.location.pathname.split("/").pop().split(".")[0];
 
+console.log(currentPage);
+
 navMenu.classList.add("hidden");
 
 burgerMenuIcon.onclick = () => {
