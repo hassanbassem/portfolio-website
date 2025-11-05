@@ -1,6 +1,7 @@
 const burgerMenuIcon = document.querySelector("nav img");
 const navMenu = document.querySelector("nav ul");
 const homeNavigatorOnLi = document.getElementById("homeNavigator");
+const aboutNavigatorOnLi = document.getElementById("aboutNavigator");
 const currentPage = window.location.pathname.split("/").pop().split(".")[0];
 
 console.log(currentPage == ""?"empty":currentPage);
@@ -13,3 +14,6 @@ burgerMenuIcon.onclick = () => {
 
 if (currentPage == "index" || currentPage == "")
     homeNavigatorOnLi.href = "#header";
+
+if (currentPage == "about")
+    aboutNavigatorOnLi.href = "#header";

@@ -80,7 +80,7 @@ header main {
     max-height: 100vh;
 }
 
-header h1 {
+h1 {
     color: #ECC93A;
     font-size: 4em;
 }

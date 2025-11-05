@@ -1,0 +1,68 @@
+
+#About {
+    padding-top: 3.5em;
+}
+
+.container {
+    column-gap: 15em;
+}
+
+.card {
+    display: block;
+}
+
+.skill-item {
+    display: inline-block;
+    width: fit-content;
+    background-color: var(--brand-color);
+    padding: 0.1em 1em;
+    border-radius: 20px;
+    margin-right: 0.3em;
+    margin-bottom: 0.3em;
+    color: black;
+}
+
+.card h3 {
+    font-size: 2em;
+    margin: 0;
+    margin-bottom: 0.8em;
+}
+
+#GitHub-btn {
+    background-color: white;
+    color: black;
+    display: inline-flex;
+    gap: 1em;
+    margin: 0;
+}
+
+.about-container button {
+    margin-right: 0.5em;
+}
+
+#GitHub-btn img {
+    height: 0.9em;
+    width: auto;
+    transform: scale(2) translateY(0.05em) translateX(-0.1em);
+}
+
+.education-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.education-container img {
+    flex-basis: 10%;
+    min-width: 0;
+    object-fit: contain;
+}
+
+#cta p {
+    font-size: 1.2em;
+}
+
+@media (max-width: 960px) {
+    .education-container img {
+        display: none;
+    }
+}
