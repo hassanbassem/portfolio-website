@@ -556,9 +556,13 @@ form button {
     }
 
     header main {
-        padding-right: 5em;
-        padding-left: 5em;
+        /* padding-right: 5em;
+        padding-left: 5em; */
         align-items: flex-end;
+        padding-right: 0;
+        padding-left: 0;
+        width: 90%;
+        margin: auto;
     }
 
     header main div {
@@ -619,25 +623,25 @@ form button {
     }
 }
 
-@media (max-width: 390px) {
-    
-    :root {
-        font-size: 0.9em;
-    }
-}
-
-@media (max-height: 820px) and (max-width: 1200px) {
+@media (max-height: 800px) and (max-width: 1200px) {
     
     h1 {
         margin-bottom: 0.5em;
     }
-
+    
     nav {
         padding-top: 0.1em;
         padding-bottom: 0.1em;
     }
-
+    
     header p {
         display: none;
+    }
+}
+
+@media (max-width: 390px) {
+    
+    :root {
+        font-size: 0.9em;
     }
 }
