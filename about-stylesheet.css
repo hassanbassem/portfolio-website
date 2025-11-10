@@ -66,4 +66,8 @@
     .education-container img {
         display: none;
     }
+
+    .container {
+        column-gap: 5em;
+    }
 }
