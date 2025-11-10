@@ -561,6 +561,7 @@ form button {
         align-items: flex-end;
         padding-right: 0;
         padding-left: 0;
+        padding-bottom: 5em;
         width: 90%;
         margin: auto;
     }
@@ -591,6 +592,8 @@ form button {
 
     nav {
         flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1em 1.5em;
     }
 
     nav img {
