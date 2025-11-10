@@ -4,6 +4,7 @@
 }
 
 .container {
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
     column-gap: 15em;
 }
 
@@ -66,7 +67,3 @@
         display: none;
     }
 }
-/* 
-nav {
-    top: 0;
-} */
