@@ -120,6 +120,7 @@ button {
     background-color: var(--brand-color);
     font-weight: 700;
     cursor: pointer;
+    color: black;
 }
 
 #get-consultation {
@@ -561,7 +562,7 @@ form button {
         align-items: flex-end;
         padding-right: 0;
         padding-left: 0;
-        padding-bottom: 5em;
+        padding-bottom: 6em;
         width: 90%;
         margin: auto;
     }
@@ -626,21 +627,25 @@ form button {
     }
 }
 
-/* @media (max-height: 800px) and (max-width: 1200px) {
+@media (orientation: landscape) and (max-width: 900px) {
     
     h1 {
         margin-bottom: 0.5em;
     }
     
     nav {
-        padding-top: 0.1em;
-        padding-bottom: 0.1em;
+        padding-top: 0.8em;
+        padding-bottom: 0.8em;
     }
     
     header p {
         display: none;
     }
-} */
+
+    :root {
+        font-size: 0.9em;
+    }
+}
 
 @media (max-width: 390px) {
     
