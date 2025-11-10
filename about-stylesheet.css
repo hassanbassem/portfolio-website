@@ -66,3 +66,7 @@
         display: none;
     }
 }
+
+nav {
+    top: 0;
+}
